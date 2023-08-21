@@ -1,6 +1,6 @@
-# kobar
+# KOBAR Connect
 
-A new Flutter project.
+Repository ini untuk menyimpan file proyek yang dikembangkan untuk aplikasi Mobile dengan menggunakan framework Flutter
 
 ## Getting Started
 
