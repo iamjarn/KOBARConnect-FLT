@@ -105,7 +105,8 @@ class _DetailCategoryState extends State<DetailCategory> {
                             maxLines: 2,
                             style: TextStyle(
                                 color: Colors.orange,
-                                fontWeight: FontWeight.bold),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 14),
                           ),
                         ),
                       ),

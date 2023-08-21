@@ -40,14 +40,14 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             appBarTheme:
                 AppBarTheme(iconTheme: IconThemeData(color: Colors.black)),
-            fontFamily: 'Poppins',
+            fontFamily: 'Axiforma',
             primaryColor: grey_color,
             brightness: Brightness.light,
           ),
           darkTheme: ThemeData(
             appBarTheme:
                 AppBarTheme(iconTheme: IconThemeData(color: Colors.black)),
-            fontFamily: 'Poppins',
+            fontFamily: 'Axiforma',
             primaryColor: grey_color,
             brightness: Brightness.dark,
           ),

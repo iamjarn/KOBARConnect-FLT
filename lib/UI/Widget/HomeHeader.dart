@@ -25,6 +25,7 @@ class _HomeHeaderState extends State<HomeHeader> {
   int timerHeaderPerPageInSeconds = 5;
   List<Header> list_Header = [];
   bool alreadyCheckHeader = false;
+  int current_page = 0;
 
   @override
   void initState() {
@@ -127,7 +128,7 @@ class _HomeHeaderState extends State<HomeHeader> {
   @override
   Widget build(BuildContext context) {
     var screen_height = MediaQuery.of(context).size.height;
-    double header_height = (screen_height * 40 / 100);
+    double header_height = (screen_height * 35 / 100);
 
     return Container(
       child: SafeArea(
@@ -156,6 +157,9 @@ class _HomeHeaderState extends State<HomeHeader> {
                             options: CarouselOptions(
                                 height: header_height,
                                 viewportFraction: 1,
+                                enlargeCenterPage: true,
+                                scrollDirection: Axis.horizontal,
+                                enableInfiniteScroll: true,
                                 onPageChanged: (index, reason) {
                                   onHeaderPageChange(index);
                                 }),
@@ -171,7 +175,8 @@ class _HomeHeaderState extends State<HomeHeader> {
                                           Container(
                                             width: double.infinity,
                                             height: header_height,
-                                            padding: EdgeInsets.only(bottom: 5),
+                                            padding:
+                                                EdgeInsets.only(bottom: 15),
                                             child: header.header_type == "IMAGE"
                                                 ? Image.network(
                                                     header.value,
@@ -194,7 +199,7 @@ class _HomeHeaderState extends State<HomeHeader> {
                                           Align(
                                             alignment: Alignment.bottomCenter,
                                             child: Container(
-                                              height: header_height * 30 / 100,
+                                              height: header_height * 18 / 100,
                                               width: double.infinity,
                                               decoration: BoxDecoration(
                                                   gradient: LinearGradient(
@@ -214,25 +219,28 @@ class _HomeHeaderState extends State<HomeHeader> {
                                               width: double.infinity,
                                               height: header_height,
                                               padding:
-                                                  EdgeInsets.only(bottom: 50),
+                                                  EdgeInsets.only(bottom: 30),
                                               child: Column(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment.end,
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.center,
                                                 children: [
-                                                  Text("Selamat Datang",
+                                                  Text(
+                                                      "Selamat Datang di Kotawaringin Barat",
                                                       style: TextStyle(
                                                           color: Colors.white,
-                                                          fontSize: 25,
+                                                          fontSize: 15,
                                                           fontWeight:
-                                                              FontWeight.bold,
-                                                          fontFamily:
-                                                              "Pacifico")),
+                                                              FontWeight.w900,
+                                                          fontFamily: "Asap")),
                                                   Text(
                                                     header.description,
                                                     style: TextStyle(
-                                                        color: Colors.white),
+                                                        color: Colors.white,
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w500),
                                                     textAlign: TextAlign.center,
                                                   )
                                                 ],

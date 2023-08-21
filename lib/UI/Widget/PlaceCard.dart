@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:kobar/UI/Models/Place.dart';
-import 'package:kobar/Utility/Theme.dart';
 
 class PlaceCard extends StatefulWidget {
   final Function onClick;
@@ -13,8 +12,8 @@ class PlaceCard extends StatefulWidget {
 }
 
 class _PlaceCardState extends State<PlaceCard> {
-  double card_height = 120;
-  double card_width = 200;
+  double card_height = 180;
+  double card_width = 150;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class _PlaceCardState extends State<PlaceCard> {
         widget.onClick();
       },
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 8),
+        margin: EdgeInsets.symmetric(horizontal: 4),
         width: card_width,
         height: card_height,
         decoration: BoxDecoration(
@@ -54,20 +53,23 @@ class _PlaceCardState extends State<PlaceCard> {
                         begin: Alignment.topCenter,
                         colors: [
                           Colors.transparent,
-                          Colors.black.withOpacity(0.7),
+                          Colors.black.withOpacity(0.8),
                         ])),
               ),
             ),
             Align(
               alignment: Alignment.bottomLeft,
               child: Padding(
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                 child: Text(
                   widget.place.name!,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                   style: TextStyle(
-                      color: Colors.orange, fontWeight: FontWeight.bold),
+                      color: Colors.orange,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14,
+                      height: 0),
                 ),
               ),
             ),

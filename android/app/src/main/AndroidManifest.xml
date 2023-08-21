@@ -2,7 +2,8 @@
     package="com.example.kobar">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="kobar"
+        android:usesCleartextTraffic="true"
+        android:label="KOBAR Connect"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -21,6 +22,7 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+              
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

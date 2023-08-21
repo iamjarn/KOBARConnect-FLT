@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 import 'package:kobar/UI/Models/Category.dart';
 import 'package:kobar/UI/Models/Header.dart';
@@ -134,8 +135,9 @@ class ContentService {
     return list_tour;
   }
 
-  static Future<Map<String, dynamic>> createOrder(Transaction data) async {
-    Uri url = Uri.parse("${API_URL}api/tour/1/transaction");
+  static Future<Map<String, dynamic>> createOrder(
+      Transaction data, int id) async {
+    Uri url = Uri.parse("${API_URL}api/tour/$id/transaction");
 
     var map = new Map<String, dynamic>();
     map['visit_date'] = data.visit_date;

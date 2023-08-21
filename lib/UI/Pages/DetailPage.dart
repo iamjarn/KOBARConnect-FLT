@@ -52,46 +52,68 @@ class _DetailPageState extends State<DetailPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CarouselSlider(
-                    carouselController: header_controller,
-                    options: CarouselOptions(
-                        height: header_height,
-                        enableInfiniteScroll: false,
-                        viewportFraction: 1,
-                        onPageChanged: (index, reason) {
-                          setState(() {
-                            current_page = index;
-                          });
-                        }),
-                    items: list_image.map((e) {
-                      print("check Image ${e}");
-                      return Container(
-                        height: header_height,
-                        width: double.infinity,
-                        child: Image.network(
-                          e!,
-                          fit: BoxFit.cover,
-                        ),
-                      );
-                    }).toList(),
+                  Stack(
+                    children: [
+                      CarouselSlider(
+                        carouselController: header_controller,
+                        options: CarouselOptions(
+                            height: header_height,
+                            enableInfiniteScroll: false,
+                            viewportFraction: 1,
+                            onPageChanged: (index, reason) {
+                              setState(() {
+                                current_page = index;
+                              });
+                            }),
+                        items: list_image.map((e) {
+                          print("check Image ${e}");
+                          return Container(
+                            height: header_height,
+                            width: double.infinity,
+                            child: Image.network(
+                              e!,
+                              fit: BoxFit.cover,
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            for (int index = 0;
+                                index < list_image.length;
+                                index++)
+                              Container(
+                                width: 8.0,
+                                height: 15.0,
+                                margin: EdgeInsets.only(top: 240.0, left: 2.0),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: current_page == index
+                                      ? Colors.white
+                                      : Color.fromARGB(255, 65, 56, 56),
+                                ),
+                              )
+                          ]),
+                    ],
                   ),
-                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    for (int index = 0; index < list_image.length; index++)
-                      Container(
-                        width: 8.0,
-                        height: 8.0,
-                        margin: EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 2.0),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: current_page == index
-                              ? Colors.white
-                              : Colors.grey,
-                        ),
-                      )
-                  ]),
+                  //Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  //for (int index = 0; index < list_image.length; index++)
+                  //Container(
+                  //width: 8.0,
+                  //height: 15.0,
+                  //margin: EdgeInsets.symmetric(
+                  //  vertical: 0.0, horizontal: 2.0),
+                  //decoration: BoxDecoration(
+                  //shape: BoxShape.circle,
+                  //color: current_page == index
+                  //    ? Colors.black
+                  //      : Colors.grey,
+                  //  ),
+                  //  )
+                  //]),
                   SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 24),

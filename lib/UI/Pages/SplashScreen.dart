@@ -26,6 +26,8 @@ class SplashScreen extends StatelessWidget {
               ),
               Image.asset(
                 'images/logo_dispar_kobar.png',
+                width: 664.0,
+                height: 113.0,
               ),
             ],
           ),

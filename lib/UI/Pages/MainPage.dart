@@ -40,7 +40,7 @@ class _MainPageState extends State<MainPage> {
                 return Column(
                   children: data.map((e) {
                     return ListPlaceGroup(
-                      list_title: "Rekomendasi ${e.name}",
+                      list_title: "Rekomendasi Wisata ${e.name}",
                       list_item: e.list_tour,
                       category_id: e.id,
                     );
@@ -53,7 +53,7 @@ class _MainPageState extends State<MainPage> {
               }
             }),
             SizedBox(
-              height: 75,
+              height: 100,
             )
           ],
         ),

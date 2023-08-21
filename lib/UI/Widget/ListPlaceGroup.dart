@@ -32,14 +32,14 @@ class _ListPlaceGroupState extends State<ListPlaceGroup> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           child: Text(
             widget.list_title,
             style: TextStyle(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
                 fontSize: 17,
                 color: Colors.black,
-                fontFamily: 'Helvetica'),
+                fontFamily: 'Axiforma'),
           ),
         ),
         Container(
@@ -72,8 +72,8 @@ class _ListPlaceGroupState extends State<ListPlaceGroup> {
                         }));
                       },
                       child: Container(
-                        height: 150,
-                        width: 120,
+                        height: 220,
+                        width: 100,
                         margin: EdgeInsets.only(right: 10),
                         decoration: BoxDecoration(
                           color: Colors.grey.withOpacity(0.6),
@@ -95,18 +95,26 @@ class _ListPlaceGroupState extends State<ListPlaceGroup> {
                   ],
                 );
               } else {
-                return PlaceCard(
-                    onClick: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (contenxt) {
-                        return DetailPage(place: widget.list_item[index]);
-                      }));
-                    },
-                    place: widget.list_item[index]);
+                return Padding(
+                  padding: index == 0
+                      ? EdgeInsets.only(left: 18)
+                      : EdgeInsets.all(0),
+                  child: PlaceCard(
+                      onClick: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (contenxt) {
+                          return DetailPage(place: widget.list_item[index]);
+                        }));
+                      },
+                      place: widget.list_item[index]),
+                );
               }
             },
             itemCount: widget.list_item.length,
           ),
+        ),
+        SizedBox(
+          height: 12,
         )
       ],
     );

@@ -287,7 +287,7 @@ class _OrderPageState extends State<OrderPage> {
                               .build(),
                           controller: address,
                           decoration: new InputDecoration(
-                              hintText: "Kota/Kabupaten Domosili"),
+                              hintText: "Kota/Kabupaten Domisili"),
                         ),
                         SizedBox(
                           height: 10,
@@ -326,9 +326,10 @@ class _OrderPageState extends State<OrderPage> {
                       return InkWell(
                         onTap: () {
                           if (_validate()) {
-                            context
-                                .read<OrderBloc>()
-                                .add(Order(data: createOrder()));
+                            context.read<OrderBloc>().add(Order(
+                                  data: createOrder(),
+                                  id: widget.place.id,
+                                ));
                           }
                         },
                         child: Container(
@@ -351,9 +352,10 @@ class _OrderPageState extends State<OrderPage> {
                       return InkWell(
                         onTap: () {
                           if (_validate()) {
-                            context
-                                .read<OrderBloc>()
-                                .add(Order(data: createOrder()));
+                            context.read<OrderBloc>().add(Order(
+                                  data: createOrder(),
+                                  id: widget.place.id,
+                                ));
                           }
                         },
                         child: Container(
