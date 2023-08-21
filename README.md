@@ -1,6 +1,7 @@
-# KOBAR Connect
+# KOBAR Connect Mobile App
 
-Repository ini untuk menyimpan file proyek yang dikembangkan untuk aplikasi Mobile dengan menggunakan framework Flutter
+Repository ini untuk menyimpan file proyek yang dikembangkan untuk aplikasi Mobile dengan menggunakan framework Flutter.
+DISCLAIMER : Hanya bisa dijalankan khusus untuk perangkat Android
 
 ## Getting Started
 
